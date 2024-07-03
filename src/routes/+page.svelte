@@ -1,4 +1,23 @@
 <script lang="ts">
+	function redirect(location: string) {
+		switch (location) {
+			case "Home":
+				window.location.href = "/";
+				break;
+			case "About":
+				window.location.href = "/about";
+				break;
+			case "Service":
+				window.location.href = "/service";
+				break;
+			case "Contact":
+				window.location.href = "/contact";
+				break;
+			default:
+				break;
+		}
+		
+	}
 </script>
 
 <appbar>
@@ -10,7 +29,7 @@
 		<p class="appbar item">Home</p>
 		<p class="appbar item">About</p>
 		<p class="appbar item">Service</p>
-		<p class="appbar item">Contact</p>
+		<p class="appbar item" on:click={() => redirect("Contact")}>Contact</p>
 	</div>
 </appbar>
 
